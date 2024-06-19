@@ -1,0 +1,39 @@
+@import "@/assets/styles/typography";
+@import "@/assets/styles/vars";
+
+.homeBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+
+    &__title {
+        @extend .typography__h1;
+        margin-bottom: var( --cabr-size-gap-l );
+    }
+
+    &__lead {
+        @extend .typography__bigText;
+    }
+
+
+    // Media
+    @media ($media-notebook) {
+        &__title {
+            margin-bottom: var(--cabr-size-gap);
+        }
+    }
+
+    @media ($media-tablet) {
+        width: 70%;
+    }
+
+    @media ($media-mobile) {
+        width: 100%;
+
+        &__title {
+            margin-bottom: var(--cabr-size-gap-s);
+        }
+    }
+}

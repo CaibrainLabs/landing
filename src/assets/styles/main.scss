@@ -1,0 +1,29 @@
+@import "@/assets/styles/vars";
+@import "@/assets/styles/typography";
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: var( --cabr-color-bg );
+
+    #cabrApp {
+        width: 100%;
+        height: 100%;
+    }
+
+    a {
+        @extend .typography__link;
+    }
+
+    b,
+    strong {
+        @extend .typography__accent;
+    }
+}

@@ -1,0 +1,60 @@
+@import "@/assets/styles/vars";
+
+.typography {
+    &__h1 {
+        font-size: 40px;
+        font-weight: bold;
+        line-height: 1.2;
+        color: var( --cabr-color-title );
+    }
+
+    &__accent {
+        font-weight: bold;
+        color: var( --cabr-color-text-accent );
+    }
+
+    &__link {
+        color: var( --cabr-color-link );
+        text-decoration: none;
+        transition: color ease var( --cabr-trasition-duration );
+
+        &:hover {
+            color: var( --cabr-color-link-hover );
+        }
+    }
+
+    &__bigText {
+        font-size: 24px;
+    }
+
+    // Media
+    @media ($media-notebook) {
+        &__h1 {
+            font-size: 38px;
+        }
+
+        &__bigText {
+            font-size: 22px;
+        }
+    }
+
+    @media ($media-tablet) {
+        &__h1 {
+            font-size: 30px;
+        }
+
+        &__bigText {
+            font-size: 20px;
+        }
+    }
+
+    @media ($media-mobile) {
+        &__h1 {
+            font-size: 24px;
+        }
+
+        &__bigText {
+            font-size: 16px;
+        }
+    }
+}
