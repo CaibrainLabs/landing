@@ -1,0 +1,56 @@
+@import "@/assets/styles/vars";
+
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: var( --cabr-size-gap-l ) 0;
+
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__logoIcon {
+        width: 100px;
+        margin-bottom: var( --cabr-size-gap-xs );
+    }
+
+    &__logoText {
+        width: 150px;
+    }
+
+
+    // Media
+    @media ($media-notebook) {
+        &__logoIcon {
+            width: 80px;
+        }
+
+        &__logoText {
+            width: 130px;
+        }
+    }
+
+    @media ($media-tablet) {
+        padding: var( --cabr-size-gap ) 0;
+
+        &__logoIcon {
+            width: 50px;
+        }
+
+        &__logoText {
+            width: 115px;
+        }
+    }
+
+    @media ($media-mobile) {
+        justify-content: center;
+        padding: var( --cabr-size-indent-mobile ) 0;
+
+        &__logoText {
+            width: 80px;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+@import "@/assets/styles/typography";
+@import "@/assets/styles/vars";
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 0 5px;
+    padding: var( --cabr-size-gap ) 0;
+
+    &__leftSide {
+        // Placeholder
+    }
+
+    &__rightSide {
+        // Placeholder
+    }
+
+    &__socialLinks {
+        display: flex;
+        gap: var( --cabr-size-gap );
+
+        a {
+            @extend .typography__link;
+        }
+
+        svg {
+            display: block;
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &__email {
+        @extend .typography__bigText;
+    }
+
+
+    // Media
+    @media ($media-mobile) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var( --cabr-size-gap-s );
+        padding: var( --cabr-size-indent-mobile ) 0;
+    }
+}
