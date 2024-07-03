@@ -1,0 +1,29 @@
+name: Workflow - Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "The branch to publish to"
+        required: true
+        default: "gh-pages"
+permissions:
+  contents: write
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Build Project
+        run: yarn build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: ${{ github.event.inputs.branch }} # The branch the action should deploy to.
+          folder: dist # The folder the action should deploy.
